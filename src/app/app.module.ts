@@ -7,8 +7,13 @@ import { UserSearchComponent } from './user-search/user-search.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
 
+const appRoutes:Routes = [
+  {path:'', component: UserAddComponent},
+{path:'viewall', component: UserListComponent}
 
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
 
   ],
   providers: [],
